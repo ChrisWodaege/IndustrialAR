@@ -8,7 +8,7 @@ public class EnableDisableLable : MonoBehaviour, IInputClickHandler
     bool pressed = false;
     public GameObject lable;
     private float scale = 0;
-    public float speed = 0.05f;
+    public float speed = 0.1f;
     private float value = 0;
     int start, end;
 
@@ -23,7 +23,6 @@ public class EnableDisableLable : MonoBehaviour, IInputClickHandler
         {
             value += speed;
             scale = Mathf.Lerp(start, end, value);
-            Debug.Log(scale);
             lable.transform.localScale = new Vector3(scale, scale, scale);
         }
 

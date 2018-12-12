@@ -248,59 +248,11 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/Runtime/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.StandardEvents">
-      <HintPath>C:/Users/chris/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Assets/MRTK/HoloToolkit/Utilities/Scripts/GLTF/Plugins/JsonNet/WSA/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="PlaneFinding">
-      <HintPath>Assets/MRTK/HoloToolkit/SpatialMapping/Plugins/WSA/x64/PlaneFinding.dll</HintPath>
-    </Reference>
-    <Reference Include="MicStreamSelector">
-      <HintPath>Assets/MRTK/HoloToolkit/Input/Plugins/MicStreamSelector/WSA/ARM/MicStreamSelector.dll</HintPath>
-    </Reference>
-    <Reference Include="GpuTiming">
-      <HintPath>Assets/MRTK/HoloToolkit/Utilities/Scripts/GpuTiming/Plugins/WSA/x64/GpuTiming.dll</HintPath>
-    </Reference>
-    <Reference Include="SharingClient">
-      <HintPath>Assets/MRTK/HoloToolkit/Sharing/Plugins/WSA/ARM/SharingClient.dll</HintPath>
-    </Reference>
-    <Reference Include="MicStreamSelector">
-      <HintPath>Assets/MRTK/HoloToolkit/Input/Plugins/MicStreamSelector/WSA/x86/MicStreamSelector.dll</HintPath>
-    </Reference>
     <Reference Include="GLTFSerializationUWP">
       <HintPath>Assets/MRTK/HoloToolkit/Utilities/Scripts/GLTF/Plugins/GLTFSerialization/WSA/GLTFSerializationUWP.dll</HintPath>
     </Reference>
-    <Reference Include="MicStreamSelector">
-      <HintPath>Assets/MRTK/HoloToolkit/Input/Plugins/MicStreamSelector/WSA/x64/MicStreamSelector.dll</HintPath>
-    </Reference>
-    <Reference Include="SpatialUnderstanding">
-      <HintPath>Assets/MRTK/HoloToolkit/SpatialUnderstanding/Plugins/WSA/ARM/SpatialUnderstanding.dll</HintPath>
-    </Reference>
-    <Reference Include="SpatialUnderstanding">
-      <HintPath>Assets/MRTK/HoloToolkit/SpatialUnderstanding/Plugins/WSA/x64/SpatialUnderstanding.dll</HintPath>
-    </Reference>
-    <Reference Include="SharingClient">
-      <HintPath>Assets/MRTK/HoloToolkit/Sharing/Plugins/WSA/x64/SharingClient.dll</HintPath>
-    </Reference>
-    <Reference Include="SpatialUnderstanding">
-      <HintPath>Assets/MRTK/HoloToolkit/SpatialUnderstanding/Plugins/WSA/x86/SpatialUnderstanding.dll</HintPath>
-    </Reference>
-    <Reference Include="SharingClient">
-      <HintPath>Assets/MRTK/HoloToolkit/Sharing/Plugins/WSA/x86/SharingClient.dll</HintPath>
-    </Reference>
-    <Reference Include="PlaneFinding">
-      <HintPath>Assets/MRTK/HoloToolkit/SpatialMapping/Plugins/WSA/x86/PlaneFinding.dll</HintPath>
-    </Reference>
-    <Reference Include="GpuTiming">
-      <HintPath>Assets/MRTK/HoloToolkit/Utilities/Scripts/GpuTiming/Plugins/WSA/ARM/GpuTiming.dll</HintPath>
-    </Reference>
-    <Reference Include="PlaneFinding">
-      <HintPath>Assets/MRTK/HoloToolkit/SpatialMapping/Plugins/WSA/ARM/PlaneFinding.dll</HintPath>
-    </Reference>
-    <Reference Include="GpuTiming">
-      <HintPath>Assets/MRTK/HoloToolkit/Utilities/Scripts/GpuTiming/Plugins/WSA/x86/GpuTiming.dll</HintPath>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Assets/MRTK/HoloToolkit/Utilities/Scripts/GLTF/Plugins/JsonNet/WSA/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\mscorlib.dll</HintPath>
@@ -1627,7 +1579,9 @@
     <Compile Include="Assets\Scripts\FocusOutline.cs" />
     <Compile Include="Assets\Scripts\MenuController.cs" />
     <Compile Include="Assets\Scripts\OrientationToCamera.cs" />
+    <Compile Include="Assets\Scripts\PlaySound.cs" />
     <Compile Include="Assets\Scripts\ScaleObject.cs" />
+    <Compile Include="Assets\Scripts\SetObjectManipulation.cs" />
     <Compile Include="Assets\Scripts\StartStopAnimation.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
