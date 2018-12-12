@@ -9,7 +9,7 @@ public class PlaySound : MonoBehaviour, IInputClickHandler, IHoldHandler
     private AudioSource interactionAudio;
     public AudioClip click;
     public AudioClip secondClick;
-    public AudioClip hold;
+
 
     private bool clickChanger = false;
 
@@ -53,11 +53,7 @@ public class PlaySound : MonoBehaviour, IInputClickHandler, IHoldHandler
 
     public void OnHoldStarted(HoldEventData eventData)
     {
-        if (hold != null)
-        {
-            interactionAudio.clip = hold;
-            interactionAudio.Play();
-        }
+      
     }
 
     public void OnHoldCompleted(HoldEventData eventData)

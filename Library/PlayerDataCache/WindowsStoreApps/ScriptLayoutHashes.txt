@@ -219,7 +219,7 @@ ec6c453334fa780fee50b6386a6dceec Assembly-CSharp.dll:HoloToolkit.Unity.UX.Boundi
 ab5c3bcd7cf22ccbc69ccda3a57fb703 Assembly-CSharp.dll:HoloToolkit.Unity.Buttons.CompoundButtonSounds
 0c792fedc133ae2f79473a701e929c2f Assembly-CSharp.dll:HoloToolkit.Unity.InputModule.Tests.ButtonObjectScaler
 96db6c25487f87bca717c6b1aeaf81f8 Assembly-CSharp.dll:HoloToolkit.Unity.AdaptiveViewport
-7f8f04ea93c32b4a0baf768b9777aa82 Assembly-CSharp.dll:.SetObjectManipulation
+139223efe74c9e01c832d0e869552697 Assembly-CSharp.dll:.SetObjectManipulation
 5591aac6808f6837956e955b9c8a9c0b Assembly-CSharp.dll:HoloToolkit.Examples.Prototyping.CycleTextMeshColors
 65d9d4df04efb46692646245c142318b Assembly-CSharp.dll:HoloToolkit.Unity.Tests.PlaneTargetGroup
 382b8ef512fa8d6108723a01b57af65b UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
@@ -347,6 +347,7 @@ bb1aa909346b6d5a7cae51998d672e06 Assembly-CSharp.dll:HoloToolkit.UX.ToolTips.Too
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:HoloToolkit.Unity.SharingWithUNET.BulletController
 f16835701e71dd5d6fb1fed4b7aff1d8 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 5fc76103ffeb2037ed0100f4190b008a Assembly-CSharp.dll:.LoFiFilterSelection
+6d355d2f5a91e5b86ce7a918d0f6e505 Assembly-CSharp.dll:.PlaySound
 8c83185429edfa00738d5acc6dce039e Assembly-CSharp.dll:HoloToolkit.Unity.InputModule.Examples.Grabbables.GrabbableColor
 23655ae30a8410c9f90e579ca5c2a6d7 Assembly-CSharp.dll:HoloToolkit.Unity.UX.DistorterGravity
 0b10dc543c216c4f7721b8fee45c331a Assembly-CSharp.dll:HoloToolkit.Unity.InputModule.Examples.Grabbables.GrabbableTrackFollow
@@ -674,4 +675,3 @@ c1087bf328bbb39eba5a09f26c3b6368 Vuforia.UnityExtensions.dll:Vuforia.MultiTarget
 c8a41ce4eea7677f6dd2aa0e422a2f04 Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehaviour
 c31ff9acb65f7a15b5c6fd77c3314d83 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 486cd95c82d8305219c352c06b776e1f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
-486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.PlaySound
