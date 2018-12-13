@@ -16,6 +16,7 @@
         private bool pressed = false;
         int start, end;
 
+    
      
         void Update()
         {
@@ -27,9 +28,9 @@
                 {
 
                     mat = part.GetComponent<Renderer>().material;
-                    Color currentColor = mat.color;
-                    currentColor.a = alpha;
-                    mat.color = currentColor;
+                   
+                    changeMaterialToTransparent();
+                    ChangeOpacity();
 
                 }
             }
@@ -58,12 +59,7 @@
             value = 0;
             pressed = true;
 
-            foreach (GameObject part in MainBaugruppen)
-            {
-                mat = part.GetComponent<Renderer>().material;
-                changeMaterialToTransparent();
-            }
-
+        
             if (layer.activeSelf == true)
             {
                 DisableParts();
@@ -91,26 +87,35 @@
 
         }
 
+        void ChangeOpacity()
+        {
+            Color currentColor =mat.color;
+            currentColor.a = alpha;
+           mat.color = currentColor;
+
+
+        }
+
         void changeMaterialToTransparent()
         {
-            mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-            mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-            mat.SetInt("_ZWrite", 0);
-            mat.DisableKeyword("_ALPHATEST_ON");
-            mat.EnableKeyword("_ALPHABLEND_ON");
-            mat.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-            mat.renderQueue = 3000;
+           mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+           mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+           mat.SetInt("_ZWrite", 0);
+           mat.DisableKeyword("_ALPHATEST_ON");
+           mat.EnableKeyword("_ALPHABLEND_ON");
+           mat.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+           mat.renderQueue = 3000;
         }
 
         void changeMaterialToOpaque()
         {
-            mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
-            mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
-            mat.SetInt("_ZWrite", 1);
-            mat.DisableKeyword("_ALPHATEST_ON");
-            mat.DisableKeyword("_ALPHABLEND_ON");
-            mat.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-            mat.renderQueue = -1;
+           mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+           mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
+           mat.SetInt("_ZWrite", 1);
+           mat.DisableKeyword("_ALPHATEST_ON");
+           mat.DisableKeyword("_ALPHABLEND_ON");
+           mat.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+           mat.renderQueue = -1;
         }
     }
 }

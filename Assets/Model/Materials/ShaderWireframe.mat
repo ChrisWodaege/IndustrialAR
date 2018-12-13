@@ -7,15 +7,14 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: ShaderWireframe
-  m_Shader: {fileID: 4800000, guid: d45c0efca53019e43891b0f610f8146e, type: 3}
+  m_Shader: {fileID: 4800000, guid: 0d08dd59087697b44a68a02cc9a7c3a2, type: 3}
   m_ShaderKeywords: _BORDER_LIGHT_USES_HOVER_COLOR _DIRECTIONAL_LIGHT _DISABLE_ALBEDO_MAP
     _HOVER_LIGHT _RIM_LIGHT _SPECULAR_HIGHLIGHTS _USECOLOR_ON _USEMAINTEX_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
-  stringTagMap:
-    RenderType: Opaque
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -83,6 +82,7 @@ Material:
     - _ClippingPlane: 0
     - _ClippingPlaneBorder: 0
     - _ClippingPlaneBorderWidth: 0.025
+    - _ColorMask: 15
     - _ColorWriteMask: 15
     - _Cull: 2
     - _CullMode: 2
@@ -130,11 +130,16 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
     - _UVSec: 0
     - _UseColor: 1
     - _UseEmissionTex: 0
     - _UseMainTex: 1
-    - _WireThickness: 100
+    - _WireThickness: 450
     - _ZTest: 4
     - _ZWrite: 1
     m_Colors:
@@ -152,4 +157,4 @@ Material:
     - _InnerGlowColor: {r: 1, g: 1, b: 1, a: 0.75}
     - _LightDir: {r: 0.3, g: 0.8, b: -0.6, a: 1}
     - _RimColor: {r: 0, g: 0, b: 0, a: 1}
-    - _WireColor: {r: 0, g: 1, b: 0.07963061, a: 1}
+    - _WireColor: {r: 0, g: 1, b: 0.07963061, a: 0}
