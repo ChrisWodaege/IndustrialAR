@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using HoloToolkit.Unity.InputModule;
 
-public class EnableDisableLable : MonoBehaviour, IInputClickHandler
+public class EnableDisableLable : MonoBehaviour, IInputClickHandler, ISpeechHandler
 {
     bool pressed = false;
     public GameObject lable;
@@ -12,11 +12,7 @@ public class EnableDisableLable : MonoBehaviour, IInputClickHandler
     private float value = 0;
     int start, end;
 
-    void Start()
-    {
-       // lable.transform.localScale 
-    }
-
+  
     void Update()
     {
         if (pressed == true && value <= 1)
@@ -38,7 +34,39 @@ public class EnableDisableLable : MonoBehaviour, IInputClickHandler
 
         
     }
+
+    public void OnSpeechKeywordRecognized(SpeechEventData eventData)
+    {
+        SpeechInput(eventData.RecognizedText.ToLower());
+    }
+
+    public void SpeechInput(string command)
+    {
+        value = 0;
+        pressed = true;
+
+        switch (command)
+        {
+            case "inspect":
+                if (lable.activeSelf == false) {
+                    EnableLable();
+                }
+                break;
+
+            case "disable":
+                if (lable.activeSelf == true) {
+                    DisableLabel();
+                }
+                break;
+        }
+    }
+
     public void OnInputClicked(InputClickedEventData eventData)
+    {
+        UserInput();
+    }
+
+    void UserInput()
     {
         value = 0;
         pressed = true;
@@ -46,17 +74,12 @@ public class EnableDisableLable : MonoBehaviour, IInputClickHandler
         if (lable.activeSelf == true)
         {
             DisableLabel();
-           
-            
         }
         else
         {
-           
             EnableLable();
         }
-
     }
-
 
     void EnableLable()
     {
@@ -69,8 +92,5 @@ public class EnableDisableLable : MonoBehaviour, IInputClickHandler
     {
         start = 1;
         end = 0;
-     
-
-
     }
 }

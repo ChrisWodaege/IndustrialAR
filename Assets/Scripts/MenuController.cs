@@ -6,7 +6,7 @@ using HoloToolkit.Unity.InputModule;
 public class MenuController : MonoBehaviour, IInputClickHandler, ISpeechHandler
 {
     public GameObject menu;
-  
+
     public float distanceToCamera = 1;
     private bool isActive;
 
@@ -25,13 +25,13 @@ public class MenuController : MonoBehaviour, IInputClickHandler, ISpeechHandler
         isActive = false;
         menu.SetActive(isActive);
         menu.transform.localScale = new Vector3(0.3458222f, 0, 0.003278186f);
-     
+
     }
 
-   
+
     void Update()
     {
-     
+
         PositionTheMenu();
 
         if (isActive == true && menu.transform.localScale.y <= 0.34582229)
@@ -39,7 +39,7 @@ public class MenuController : MonoBehaviour, IInputClickHandler, ISpeechHandler
             ScaleFadingMenu();
         }
 
-        if(isActive == false && menu.transform.localScale.y >= 0)
+        if (isActive == false && menu.transform.localScale.y >= 0)
         {
             ScaleFadingMenu();
         }
@@ -52,52 +52,64 @@ public class MenuController : MonoBehaviour, IInputClickHandler, ISpeechHandler
 
     public void OnSpeechKeywordRecognized(SpeechEventData eventData)
     {
-        string input = eventData.RecognizedText;
-        SpeechInput(input);
+        SpeechInput(eventData.RecognizedText.ToLower());
     }
 
-    public void SpeechInput(string voiceInput)
+    public void SpeechInput(string command)
     {
-        switch (voiceInput)
+        switch (command)
         {
-            case "menu":
-                {
-                    UserInput();
-                    break;
+            case "system control":
+                if (menu.activeSelf == false) {
+                    Enable();
                 }
+                break;
+
+            case "close control":
+                if (menu.activeSelf == true)
+                {
+                    Disable();
+                }
+                break;
         }
     }
 
 
     public void OnInputClicked(InputClickedEventData eventData)
     {
-        UserInput();
-    }
-
-    
-
-   void UserInput()
-    {
         if (menu.activeSelf == false)
         {
-            start = 0;
-            end = 0.3458222f;
-            value = 0;
-
-            menu.transform.position = Camera.main.transform.position + Camera.main.transform.forward * distanceToCamera;
-            menu.SetActive(true);
-            isActive = true;
+            Enable();
 
         }
         else
         {
-            start = 0.3458222f;
-            end = 0;
-            value = 0;
-
-            isActive = false;
-
+            Disable();
         }
+    }
+
+
+    void Enable()
+    {
+
+        start = 0;
+        end = 0.3458222f;
+        value = 0;
+
+        menu.transform.position = Camera.main.transform.position + Camera.main.transform.forward * distanceToCamera;
+        menu.SetActive(true);
+        isActive = true;
+
+    }
+    void Disable()
+    {
+        start = 0.3458222f;
+        end = 0;
+        value = 0;
+
+        isActive = false;
+
+
     }
 
     void ScaleFadingMenu()
@@ -116,16 +128,16 @@ public class MenuController : MonoBehaviour, IInputClickHandler, ISpeechHandler
         {
 
             menu.transform.position = Vector3.SmoothDamp(menu.transform.position, menuDistanceObject.transform.position, ref velocity, menuFollowSpeed);
-          
+
             menuPositionCorrectionFlag = true;
             if (distance < 0.1f)
             {
-             
+
                 menuPositionCorrectionFlag = false;
             }
 
         }
     }
 
-    
+
 }

@@ -21,22 +21,19 @@ public class PlaySound : MonoBehaviour, IInputClickHandler
     public void OnInputClicked(InputClickedEventData eventData)
     {
         PlayAudio();
-        
     }
-    public void PlayAudio()
+
+    void PlayAudio()
     {
         if (clickChanger == false)
         {
-            interactionAudio.clip = click;
-            interactionAudio.Play();
-
+            PlayClick();
         }
         if (clickChanger == true)
         {
-            interactionAudio.clip = secondClick;
-            interactionAudio.Play();
-
+            PlaySecondClick();
         }
+
         if (secondClick != null)
         {
             if (clickChanger == false)
@@ -49,5 +46,19 @@ public class PlaySound : MonoBehaviour, IInputClickHandler
 
             }
         }
+    }
+
+    public void PlayClick()
+    {
+        interactionAudio.clip = click;
+        interactionAudio.Play();
+    }
+
+    public void PlaySecondClick()
+    {
+        interactionAudio.clip = secondClick;
+        interactionAudio.Play();
+
+       
     }
 }
