@@ -5,7 +5,7 @@ using HoloToolkit.Unity.InputModule;
 using HoloToolkit.Unity.InputModule.Tests;
 using HoloToolkit.Unity.InputModule.Utilities.Interactions;
 
-public class SetObjectManipulation : MonoBehaviour, IInputClickHandler
+public class SetObjectManipulation : MonoBehaviour, IInputClickHandler, ISpeechHandler
 {
     public GameObject WeaManipulator;
     public GameObject visualMoveModifier;
@@ -22,9 +22,34 @@ public class SetObjectManipulation : MonoBehaviour, IInputClickHandler
 
     }
 
+    public void blablabla()
+    {
+
+
+    }
+    public void OnSpeechKeywordRecognized(SpeechEventData eventData)
+    {
+        SpeechInput(eventData.RecognizedText.ToLower());
+    }
+
+    public void SpeechInput(string command)
+    {
+        switch (command)
+        {
+            case "activate":
+                UserInput();
+                break;
+        }
+    }
+
     public void OnInputClicked(InputClickedEventData eventData)
     {
-        if(name == "Move")
+        UserInput();
+    }
+
+    public void UserInput()
+    {
+        if (name == "Move")
         {
             WeaManipulator.GetComponent<HandDraggable>().enabled = true;
             WeaManipulator.GetComponent<NavigationRotateResponder>().enabled = false;

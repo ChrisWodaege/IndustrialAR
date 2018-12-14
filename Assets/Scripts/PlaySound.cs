@@ -4,7 +4,7 @@ using UnityEngine;
 using HoloToolkit.Unity.InputModule;
 
 
-public class PlaySound : MonoBehaviour, IInputClickHandler, IHoldHandler
+public class PlaySound : MonoBehaviour, IInputClickHandler
 {
     private AudioSource interactionAudio;
     public AudioClip click;
@@ -16,14 +16,15 @@ public class PlaySound : MonoBehaviour, IInputClickHandler, IHoldHandler
     void Start()
     {
         interactionAudio = GetComponent<AudioSource>();
-
-
-
     }
 
     public void OnInputClicked(InputClickedEventData eventData)
     {
-
+        PlayAudio();
+        
+    }
+    public void PlayAudio()
+    {
         if (clickChanger == false)
         {
             interactionAudio.clip = click;
@@ -49,21 +50,4 @@ public class PlaySound : MonoBehaviour, IInputClickHandler, IHoldHandler
             }
         }
     }
-
-
-    public void OnHoldStarted(HoldEventData eventData)
-    {
-      
-    }
-
-    public void OnHoldCompleted(HoldEventData eventData)
-    {
-
-    }
-
-    public void OnHoldCanceled(HoldEventData eventData)
-    {
-    
-    }
-
 }

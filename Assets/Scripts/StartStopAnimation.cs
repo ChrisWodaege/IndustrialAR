@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using HoloToolkit.Unity.InputModule;
 
-public class StartStopAnimation : MonoBehaviour, IInputClickHandler, IInputHandler
+public class StartStopAnimation : MonoBehaviour, IInputClickHandler, ISpeechHandler
 {
     bool pressed = true;
     Animator anim;
@@ -15,10 +15,31 @@ public class StartStopAnimation : MonoBehaviour, IInputClickHandler, IInputHandl
         anim = animatedObject.GetComponent<Animator>();
 
     }
+   
+    public void OnSpeechKeywordRecognized(SpeechEventData eventData)
+    {
+        SpeechInput(eventData.RecognizedText.ToLower());
+    }
+
+    public void SpeechInput(string command)
+    {
+        switch (command)
+        {
+            case "activate":
+                UserInput();
+                break;
+        }
+    }
 
     public void OnInputClicked(InputClickedEventData eventData)
     {
+        UserInput();
+       
+   
+    }
 
+    public void UserInput()
+    {
         if (pressed == false)
         {
 
@@ -32,11 +53,7 @@ public class StartStopAnimation : MonoBehaviour, IInputClickHandler, IInputHandl
             anim.SetFloat("startStopValue", 0);
             Debug.Log(0);
         }
-   
     }
 
-    public void OnInputDown(InputEventData eventData)
-    { }
-    public void OnInputUp(InputEventData eventData)
-    { }
+   
 }

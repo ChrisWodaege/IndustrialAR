@@ -5,7 +5,7 @@
     using System.Collections.Generic;
     using UnityEngine;
 
-    public class EnableDisableParts : MonoBehaviour, IInputClickHandler
+    public class EnableDisableParts : MonoBehaviour, IInputClickHandler, ISpeechHandler
     {
         public GameObject[] MainBaugruppen;
         public GameObject[] SubBaugruppen;
@@ -21,11 +21,9 @@
         private int alphaSwitch = 1;
         int start, end;
 
-     
-
+         
         void Update()
         {
-            
             if (pressed == true)
             {
                 if (value <= 1)
@@ -37,9 +35,7 @@
                     foreach (GameObject part in MainBaugruppen)
                     {
                         mat = part.GetComponent<Renderer>().materials;
-                        
-                        
-                                             
+                   
                         if (name == "ShadedWire")
                         {
                             ChangeWireOpacity(alphaWire);
@@ -69,7 +65,6 @@
                         mat = part.GetComponent<Renderer>().materials;
                         changeMaterialToOpaque();
                     }
-                    
 
                     pressed = false;
 
@@ -88,20 +83,38 @@
                             subPart.SetActive(false);
                         }
                     }
-
                 }
- 
+             }
+        }
+
+        public void OnSpeechKeywordRecognized(SpeechEventData eventData)
+        {
+            SpeechInput(eventData.RecognizedText.ToLower());
+        }
+
+        public void SpeechInput(string command)
+        {
+            switch (command)
+            {
+                case "activate":
+                    UserInput();
+                    break;
             }
         }
 
         public void OnInputClicked(InputClickedEventData eventData)
+        {
+            UserInput();
+        }
+
+        void UserInput()
         {
             value = 0;
             pressed = true;
 
             foreach (GameObject subPart in SubBaugruppen)
             {
-                if(subPart.activeSelf == false)
+                if (subPart.activeSelf == false)
                 {
                     subPart.SetActive(true);
                 }
@@ -112,11 +125,11 @@
                 Debug.Log("in");
                 if (wireIsActive == true)
                 {
-                     wireIsActive = false;
+                    wireIsActive = false;
                 }
                 else
                 {
-                       wireIsActive = true;
+                    wireIsActive = true;
                 }
             }
 
@@ -141,7 +154,6 @@
             }
         }
 
-        
         void ChangeShadedOpacity()
         {
             Color currentColor = mat[0].color;
