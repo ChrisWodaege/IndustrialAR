@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using HoloToolkit.Unity.InputModule;
 
-public class MenuController : MonoBehaviour, IInputClickHandler
+public class MenuController : MonoBehaviour, IInputClickHandler, ISpeechHandler
 {
     public GameObject menu;
   
@@ -50,7 +50,33 @@ public class MenuController : MonoBehaviour, IInputClickHandler
         }
     }
 
+    public void OnSpeechKeywordRecognized(SpeechEventData eventData)
+    {
+        string input = eventData.RecognizedText;
+        SpeechInput(input);
+    }
+
+    public void SpeechInput(string voiceInput)
+    {
+        switch (voiceInput)
+        {
+            case "menu":
+                {
+                    UserInput();
+                    break;
+                }
+        }
+    }
+
+
     public void OnInputClicked(InputClickedEventData eventData)
+    {
+        UserInput();
+    }
+
+    
+
+   void UserInput()
     {
         if (menu.activeSelf == false)
         {
@@ -68,12 +94,10 @@ public class MenuController : MonoBehaviour, IInputClickHandler
             start = 0.3458222f;
             end = 0;
             value = 0;
-            
+
             isActive = false;
 
         }
-
-
     }
 
     void ScaleFadingMenu()
@@ -102,5 +126,6 @@ public class MenuController : MonoBehaviour, IInputClickHandler
 
         }
     }
+
     
 }

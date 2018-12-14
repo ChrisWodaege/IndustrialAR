@@ -254,6 +254,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>Assets/MRTK/HoloToolkit/Utilities/Scripts/GLTF/Plugins/JsonNet/WSA/Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.StandardEvents">
+      <HintPath>C:/Users/chris/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+    </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\mscorlib.dll</HintPath>
     </Reference>
@@ -1566,13 +1569,6 @@
     <Compile Include="Assets\MRTK\HoloToolkit-Examples\UX\Scripts\Widgets\ScaleThemeWidget.cs" />
     <Compile Include="Assets\MRTK\HoloToolkit-Examples\UX\Scripts\Widgets\TextMeshColorThemeWidget.cs" />
     <Compile Include="Assets\MRTK\HoloToolkit-Examples\UX\Scripts\Widgets\TextureThemeWidget.cs" />
-    <Compile Include="Assets\OutlineEffect\Demo\MaterialSwitcher.cs" />
-    <Compile Include="Assets\OutlineEffect\Demo\OutlineAnimation.cs" />
-    <Compile Include="Assets\OutlineEffect\Demo\Rotate.cs" />
-    <Compile Include="Assets\OutlineEffect\Demo\Toggle.cs" />
-    <Compile Include="Assets\OutlineEffect\LinkedSet.cs" />
-    <Compile Include="Assets\OutlineEffect\Outline.cs" />
-    <Compile Include="Assets\OutlineEffect\OutlineEffect.cs" />
     <Compile Include="Assets\Scripts\EnableDisableLable.cs" />
     <Compile Include="Assets\Scripts\EnableDisableParts.cs" />
     <Compile Include="Assets\Scripts\FocusButtonOnHover.cs" />
@@ -1583,6 +1579,15 @@
     <Compile Include="Assets\Scripts\ScaleObject.cs" />
     <Compile Include="Assets\Scripts\SetObjectManipulation.cs" />
     <Compile Include="Assets\Scripts\StartStopAnimation.cs" />
+    <Compile Include="Assets\SpecialShader\OutlineEffect\Demo\MaterialSwitcher.cs" />
+    <Compile Include="Assets\SpecialShader\OutlineEffect\Demo\OutlineAnimation.cs" />
+    <Compile Include="Assets\SpecialShader\OutlineEffect\Demo\Rotate.cs" />
+    <Compile Include="Assets\SpecialShader\OutlineEffect\Demo\Toggle.cs" />
+    <Compile Include="Assets\SpecialShader\OutlineEffect\LinkedSet.cs" />
+    <Compile Include="Assets\SpecialShader\OutlineEffect\Outline.cs" />
+    <Compile Include="Assets\SpecialShader\OutlineEffect\OutlineEffect.cs" />
+    <Compile Include="Assets\SpecialShader\Wireframe\Examples\Scripts\AutoRotate.cs" />
+    <Compile Include="Assets\SpecialShader\Wireframe\ImageEffect\WireframeImageEffect.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
